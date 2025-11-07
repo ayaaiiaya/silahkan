@@ -1,0 +1,313 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #FFFADD; /* krem lembut */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Navbar === */
+nav {
+  background-color: #FFFADD; /* krem muda */
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri - menu kanan */
+}
+
+.logo img {
+  height: 115px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* === Menu Links === */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #616B37;
+  font-weight: 750;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #45270D; /* hijau olive */
+}
+
+/* === Dropdown === */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #616B37;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fffdf4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f0da;
+  color: #4a6741;
+}
+
+/* Hover aktifkan dropdown */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background-color: #fffbe9;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #3a3a3a;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* === About Section === */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 8%;
+}
+
+.about img {
+  width: 48%;
+  border-radius: 1rem;
+}
+
+.about-text {
+  width: 48%;
+}
+
+.about-text h2 {
+  color: #4a6741;
+  margin-bottom: 1rem;
+}
+
+/* === Programs === */
+.programs {
+  background-color: #fffdf4;
+  text-align: center;
+  padding: 4rem 8%;
+}
+
+.programs h2 {
+  color: #3a3a3a;
+  margin-bottom: 2rem;
+}
+
+.program-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.program-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+/* === Statistics Section === */
+.stats {
+  background-color: #f8f1da;
+  text-align: center;
+  padding: 4rem 8%;
+}
+
+.stats .numbers {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background-color: #4a6741;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 180px;
+}
+
+/* === Testimonials === */
+.testimonials {
+  background-color: #fffbe9;
+  padding: 4rem 8%;
+  text-align: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 2rem;
+}
+
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #5f6f3a; /* Hijau tua seperti gambar */
+  color: #f7f6e7; /* Warna teks lembut */
+  padding: 2.5rem 5%;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.footer-logo {
+  width: 300px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-brand p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer-contact li {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-contact span {
+  font-size: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-right li {
+  margin: 0.4rem 0;
+}
+
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #e2dbae;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.7rem;
+  color: #f0f0f0;
+}
