@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #FFFADD;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #FFFADD;
+  padding: 0.3rem 2%; 
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+}
+
+/* Flex container untuk isi navbar */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  width: 200px; 
+  height: auto;
+}
+
+/* Menu utama */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link menu */
+.nav-links a {
+  text-decoration: none;
+  color: #616B37;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 8px; /* ↓ kecilkan padding dalam link */
+  border-radius: 6px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #45270D;
+  background-color: #f4efc8;
+}
+
+/* ===== EFEK SCROLL NAVBAR ===== */
+.navbar.scrolled {
+  background-color: #fff; /* warna navbar saat scroll */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Warna teks menu berubah agar kontras */
+.navbar.scrolled .nav-links a {
+  color: #4a5d23;
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: #FFFADD;
+  background-color: transparent;
+}
+
+/* Logo saat scroll bisa lebih kecil biar elegan */
+.navbar.scrolled .logo img {
+  width: 170px;
+  transition: width 0.3s ease;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #616B37;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0.4rem 0;
+  list-style: none;
+  border-radius: 6px;
+  top: 120%;
+  left: 0;
+  min-width: 180px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 12px;
+  color: #FFFADD;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #FFFADD;
+  color: #64812b;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}

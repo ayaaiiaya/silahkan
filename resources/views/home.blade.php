@@ -25,7 +25,7 @@
 
       <ul class="nav-links" id="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Profil</a></li>
+        <li><a href="{{ route('profile') }}">Profil</a></li>
         <li class="dropdown">
           <a href="#">Layanan ▾</a>
           <ul class="dropdown-menu">
@@ -229,6 +229,48 @@
       menuToggle.classList.toggle('active');
       navLinks.classList.toggle('show');
     });
+
+  </script>
+
+  <script>
+    // Tutup sidebar saat klik di luar
+    document.addEventListener('click', (e) => {
+    const nav = document.getElementById('nav-links');
+    const toggle = document.getElementById('menu-toggle');
+    const dropdown = e.target.closest('.dropdown');
+
+    // Kalau klik di luar navbar dan burger
+    if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove('show');
+      toggle.classList.remove('active');
+    }
+
+    // Kalau klik dropdown "Layanan" di sidebar
+    if (dropdown) {
+      const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+      dropdownMenu.classList.toggle('show');
+    } else {
+      // Tutup dropdown lain kalau klik di luar
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    }
+  });
+
+  // Tutup sidebar kalau link non-dropdown diklik
+    document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const parent = link.parentElement;
+      // Kalau bukan dropdown, baru tutup sidebar
+      if (!parent.classList.contains('dropdown')) {
+        document.getElementById('nav-links').classList.remove('show');
+        document.getElementById('menu-toggle').classList.remove('active');
+      } else {
+        e.preventDefault(); // biar gak langsung nutup pas buka dropdown
+      }
+    });
+  });
+
   </script>
 
 </body>
