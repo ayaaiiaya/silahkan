@@ -177,6 +177,109 @@
         </div>
     </section>
 
+    <!-- sectiaon edukasi-->
+    <section class="silahkan-edukasi" id="edukasi-sosialisasi">
+        <div class="edukasi-container">
+            <div class="edukasi-header">
+                <h2>Edukasi & <span class="highlight">Sosialisasi</span></h2>
+                <p>Perubahan Besar Dimulai Dari Tindakan Kecil di Rumah Anda.</p>
+            </div>
+
+            <div class="edukasi-list">
+
+                <div class="edukasi-item item-left-image">
+                    <div class="item-image">
+                        <img src="{{ asset('image/edukasi-1.png') }}" alt="Pilah Kain di Rumah">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Pilah Kain di Rumah</h3>
+                        <p class="item-description">
+                            Langkah awal yang sederhana namun penting. Kami mengajarkan masyarakat cara memilah kain layak pakai, kain perca, dan kain tidak terpakai agar bisa diproses sesuai kebutuhan daur ulang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="edukasi-item item-right-image">
+                    <div class="item-image">
+                        <img src="{{ asset('image/edukasi-2.png') }}" alt="Workshop Daur Ulang Kreatif">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Daur Ulang Kreatif</h3>
+                        <p class="item-description">
+                            Kami mengadakan workshop daur ulang untuk mengubah limbah kain menjadi produk baru: tas, dompet, boneka, atau bahan kerajinan lainnya.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="edukasi-item item-left-image">
+                    <div class="item-image">
+                        <img src="{{ asset('image/edukasi-3.png') }}" alt="Kurangi Dampak Lingkungan">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Kurangi Dampak Lingkungan</h3>
+                        <p class="item-description">
+                            Melalui edukasi di sekolah dan komunitas, kami menjelaskan dampak limbah tekstil terhadap bumi dan bagaimana tindakan kecil seperti daur ulang bisa mengurangi emisi karbon serta limbah di TPA.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="edukasi-item item-right-image">
+                    <div class="item-image">
+                        <img src="{{ asset('image/edukasi-4.png') }}" alt="Contoh Produk Daur Ulang Kreatif">
+                    </div>
+                    <div class="item-content">
+                        <h3 class="item-title">Daur Ulang Kreatif</h3>
+                        <p class="item-description">
+                            Kami mengajak masyarakat, UMKM, dan relawan untuk berkolaborasi menciptakan rantai ekonomi berkelanjutan. Setiap kain yang dikumpulkan menjadi sumber penghasilan baru bagi pengrajin lokal dan pelaku usaha hijau.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- sectiaon kontribusi-->
+    <section class="silahkan-kontribusi" id="kontribusi">
+        <div class="kontribusi-container">
+            <div class="kontribusi-header">
+                <h2>Kontribusi Kami Terhadap <span class="highlight">Lingkungan</span></h2>
+                <p>Setiap kilogram kain yang disumbangkan menjadi langkah kecil</p>
+            </div>
+
+            <div class="kontribusi-cards">
+
+                <div class="kontribusi-card">
+                    <div class="card-image">
+                        <img src="{{ asset('image/kontribusi-1.png') }}" alt="Mengurangi Sampah Tekstil">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mengurangi Sampah Tekstil</h3>
+                    </div>
+                </div>
+
+                <div class="kontribusi-card">
+                    <div class="card-image">
+                        <img src="{{ asset('image/kontribusi-2.png') }}" alt="Menciptakan Peluang Bagi UMKM">
+                    </div>
+                    <div class="card-content">
+                        <h3>Menciptakan Peluang Bagi UMKM</h3>
+                    </div>
+                </div>
+
+                <div class="kontribusi-card">
+                    <div class="card-image">
+                        <img src="{{ asset('image/kontribusi-3.png') }}" alt="Mendorong Gaya Hidup Hijau">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mendorong Gaya Hidup Hijau</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Include Footer Component -->
     @include('components.footer')
 
