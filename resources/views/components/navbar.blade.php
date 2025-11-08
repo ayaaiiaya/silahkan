@@ -24,7 +24,12 @@
                 </ul>
             </li>
             <li><a href="#">Berita</a></li>
-            <li><a href="#">Kontak Kami</a></li>
+            <li>
+            <a href="{{ route('kontak.index') }}" 
+                   class="@if(request()->routeIs('kontak.index')) active @endif">
+                   Kontak Kami
+                </a></li>
+            <li><a href="#">Login</a></li>
         </ul>
     </div>
 </nav>
