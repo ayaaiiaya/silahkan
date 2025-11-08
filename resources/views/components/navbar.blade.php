@@ -19,7 +19,7 @@
                 <a href="#">Layanan ▾</a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Donasi Kain</a></li>
-                    <li><a href="#">Kemitraan</a></li>
+                    <li><a href="{{ route ('kemitraan.index') }}">Kemitraan</a></li>
                     <li><a href="#">Edukasi Daur Ulang</a></li>
                 </ul>
             </li>
