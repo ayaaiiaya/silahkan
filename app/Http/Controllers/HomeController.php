@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +11,8 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function profile(){
+    public function profile()
+    {
         return view('profile');
     }
 }

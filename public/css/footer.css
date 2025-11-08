@@ -1,0 +1,155 @@
+/* ===== FOOTER STYLES ===== */
+.footer {
+    background-color: #5f6f3a;
+    color: #f7f6e7;
+    padding: 2.5rem 5%;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-brand p {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    color: #f7f6e7;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.footer-contact li {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #f7f6e7;
+}
+
+.footer-contact span {
+    font-size: 1rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footer-right ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-right li {
+    margin: 0.4rem 0;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-right a:hover {
+    color: #e2dbae;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 0.7rem;
+    color: #f0f0f0;
+}
+
+/* ===== RESPONSIVE FOOTER ===== */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 5%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        gap: 2rem;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+
+    .footer-left {
+        max-width: 100%;
+    }
+
+    .footer-logo {
+        width: 80px;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.9rem;
+    }
+
+    .footer-contact li {
+        font-size: 0.9rem;
+    }
+
+    .footer-right a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 5%;
+    }
+
+    .footer-container {
+        gap: 1.5rem;
+    }
+
+    .footer-contact li {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
