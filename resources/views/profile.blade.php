@@ -126,56 +126,56 @@
 
     <!-- sectiaon program unggulan-->
     <section class="silahkan-program" id="program-unggulan">
-        <div class="program-container">
-            <div class="program-header">
-                <h2>Program Unggulan / <span class="highlight">Kolaborasi</span></h2>
-                <p>Mewujudkan Circular Economy Melalui Kemitraan dan Kreativitas</p>
-            </div>
-
-            <div class="program-cards">
-
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="{{ asset('image/program-1.png') }}" alt="Kemitraan Pengangkutan Limbah">
-                    </div>
-                    <div class="card-content">
-                        <h3>Kemitraan Pengangkutan Limbah</h3>
-                        <p>
-                            Bekerja sama dengan mitra logistik dan komunitas lokal untuk menjemput, menyortir, dan mendistribusikan limbah kain secara efisien dan ramah lingkungan.
-                        </p>
-                        <a href="#" class="btn-gabung">Gabung Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="{{ asset('image/program-2.png') }}" alt="Donasi Kain Layak Pakai">
-                    </div>
-                    <div class="card-content">
-                        <h3>Donasi Kain Layak Pakai</h3>
-                        <p>
-                            Menyalurkan pakaian dan kain yang masih bisa digunakan kepada rumah singgah dan komunitas prasejahtera, mengubah sisa jadi berkah.
-                        </p>
-                        <a href="#" class="btn-gabung">Donasi Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="program-card">
-                    <div class="card-image">
-                        <img src="{{ asset('image/program-3.png') }}" alt="Kolaborasi Dengan UMKM Daur Ulang">
-                    </div>
-                    <div class="card-content">
-                        <h3>Kolaborasi Dengan UMKM Daur Ulang</h3>
-                        <p>
-                            Bermitra dengan pelaku UMKM kreatif yang mengubah limbah kain menjadi produk bernilai seperti tas, keset, atau dekorasi rumah.
-                        </p>
-                        <a href="#" class="btn-gabung">Gabung Sekarang</a>
-                    </div>
-                </div>
-
-            </div>
+    <div class="program-container">
+        <div class="program-header">
+            <h2>Program Unggulan / <span class="highlight">Kolaborasi</span></h2>
+            <p>Mewujudkan Circular Economy Melalui Kemitraan dan Kreativitas</p>
         </div>
-    </section>
+
+        <div class="program-cards">
+
+            <div class="program-card">
+                <div class="card-image">
+                    <img src="/image/program-1.png" alt="Ilustrasi Kemitraan Pengangkutan Limbah Kain">
+                </div>
+                <div class="card-content">
+                    <h3>Kemitraan Pengangkutan Limbah</h3>
+                    <p>
+                        Bekerja sama dengan mitra logistik dan komunitas lokal untuk menjemput, menyortir, dan mendistribusikan limbah kain secara efisien dan ramah lingkungan.
+                    </p>
+                    <a href="#" class="btn-gabung">Gabung Sekarang</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-image">
+                    <img src="/image/program-2.png" alt="Ilustrasi Kain Layak Pakai untuk Donasi">
+                </div>
+                <div class="card-content">
+                    <h3>Donasi Kain Layak Pakai</h3>
+                    <p>
+                        Menyalurkan pakaian dan kain yang masih bisa digunakan kepada rumah singgah dan komunitas prasejahtera, mengubah sisa jadi berkah.
+                    </p>
+                    <a href="#" class="btn-gabung">Donasi Sekarang</a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="card-image">
+                    <img src="/image/program-3.png" alt="Ilustrasi Kolaborasi dengan UMKM Daur Ulang">
+                </div>
+                <div class="card-content">
+                    <h3>Kolaborasi Dengan UMKM Daur Ulang</h3>
+                    <p>
+                        Bermitra dengan pelaku UMKM kreatif yang mengubah limbah kain menjadi produk bernilai seperti tas, keset, atau dekorasi rumah.
+                    </p>
+                    <a href="#" class="btn-gabung">Gabung Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- sectiaon edukasi-->
     <section class="silahkan-edukasi" id="edukasi-sosialisasi">

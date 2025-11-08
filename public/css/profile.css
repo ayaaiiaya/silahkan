@@ -518,7 +518,7 @@ body {
 }
 
 .program-header h2 .highlight {
-    color: #28a745; /* Warna hijau untuk highlight */
+    color: #28a745; /* Warna hijau cerah untuk highlight */
 }
 
 .program-header p {
@@ -549,12 +549,12 @@ body {
     padding: 15px; 
 }
 
-/* --- Area Ilustrasi dan Judul --- */
-.card-content {
+/* --- Area Konten Krem (scoping) --- */
+.program-card .card-content {
     /* Background krem untuk semua konten (ilustrasi, judul, deskripsi, tombol) */
     background-color: #fcf8e3; 
     color: #333; 
-    padding: 0; /* Hapus padding default di sini */
+    padding: 0; 
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
@@ -564,7 +564,8 @@ body {
     z-index: 2;
 }
 
-.card-image {
+/* --- Area Ilustrasi (scoping) --- */
+.program-card .card-image {
     background-color: transparent; 
     padding: 20px;
     height: 180px; 
@@ -574,32 +575,32 @@ body {
     overflow: hidden;
 }
 
-.card-image img {
+.program-card .card-image img {
     max-width: 100%;
     max-height: 100%;
     height: auto;
     object-fit: contain;
 }
 
-.card-content h3 {
+.program-card .card-content h3 {
     font-size: 1.5em;
     margin-top: 0;
-    margin-bottom: 10px; /* Jarak antara judul dan deskripsi */
+    margin-bottom: 10px;
     font-weight: 600;
     color: #4b6a37; /* Warna hijau tua untuk judul */
     padding: 0 15px;
 }
 
-.card-content p {
+.program-card .card-content p {
     font-size: 1em;
     line-height: 1.6;
     margin-bottom: 70px; /* Memberi ruang di bawah untuk tombol absolut */
     color: #555;
-    text-align: center; /* Teks deskripsi di tengah */
+    text-align: center;
     padding: 0 25px;
 }
 
-/* --- Tombol --- */
+/* --- Tombol (scoping tidak perlu karena namanya spesifik) --- */
 .btn-gabung {
     /* Posisi absolut relatif terhadap .card-content */
     position: absolute;
@@ -647,7 +648,7 @@ body {
         max-width: 100%; 
     }
     
-    .card-content p {
+    .program-card .card-content p {
         /* Sedikit kurangi ruang tombol di mobile */
         margin-bottom: 60px; 
     }
