@@ -39,8 +39,8 @@
 
             <div class="about-text">
                 <h2>Tentang Kami</h2>
-                <p><strong>SILAHKAN</strong> adalah organisasi nirlaba yang berfokus pada pengelolaan limbah kain rumah tangga berbasis ekonomi sirkular...</p>
-                <p>Melalui inovasi, kolaborasi, dan edukasi berkelanjutan...</p>
+                <p><strong>SILAHKAN</strong> adalah organisasi nirlaba yang berfokus pada pengelolaan limbah kain rumah tangga berbasis ekonomi sirkular. Kami percaya setiap potongan kain punya nilai — bukan sekadar sisa, tapi peluang untuk diolah kembali menjadi sesuatu yang bermanfaat bagi lingkungan dan masyarakat.</p>
+                <p>Melalui inovasi, kolaborasi, dan edukasi berkelanjutan, kami mengubah limbah kain menjadi produk bernilai guna sekaligus memberdayakan masyarakat untuk hidup lebih hijau dan berdaya.</p>
                 <a href="#" class="about-btn">Baca Selengkapnya →</a>
             </div>
         </div>

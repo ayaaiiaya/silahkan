@@ -15,7 +15,7 @@ body {
     /* Background color ini akan berlaku di luar area navbar, footer, dan kontak */
     font-family: "Poppins", sans-serif;
     background-color: #FFFADD; 
-    color: #333;
+    color: #616B37;
     line-height: 1.6;
 }
 
@@ -105,11 +105,11 @@ body {
 }
 
 .kirim-button {
-    background-color: #6B5B3E; 
+    background-color: #45270D; 
     color: white;
     padding: 10px 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 18px;
     font-weight: 700;
@@ -119,7 +119,7 @@ body {
 }
 
 .kirim-button:hover {
-    background-color: #5A4C39;
+    background-color: #45270D;
 }
 
 
@@ -134,7 +134,7 @@ body {
 }
 
 .info-title {
-    color: #6B5B3E; 
+    color: #616B37; 
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -149,7 +149,7 @@ body {
 
 .info-channel-text {
     font-size: 16px;
-    color: #333;
+    color: #616B37;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -167,7 +167,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    background-color: #6B5B3E; 
+    background-color: #87561E; 
     color: white;
     padding: 12px 20px;
     border-radius: 30px; 
@@ -184,7 +184,7 @@ body {
     justify-content: center;
     align-items: center;
     /* Ganti background ikon agar sesuai dengan tombolnya */
-    background-color: #8C785C; 
+    background-color: #87561E; 
     border-radius: 50%;
     width: 30px;
     height: 30px;

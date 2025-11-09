@@ -163,10 +163,6 @@
         agreeCheckbox.addEventListener('change', () => {
             submitBtn.disabled = !agreeCheckbox.checked;
         });
-
-        
     </script>
-
-    
 </body>
 </html>

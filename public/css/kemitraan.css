@@ -339,17 +339,84 @@ body {
   cursor: pointer;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE MODE (Mobile) ===== */
 @media (max-width: 768px) {
+
+  /* Layout utama */
+  .join-container,
+  .program-container,
+  .info-container {
+    flex-direction: column; /* ✅ urut ke bawah */
+    text-align: center;
+  }
+
+  .text-content,
+  .program-text,
+  .info-text {
+    text-align: center;
+  }
+
+  .image img,
+  .program-image img,
+  .info-image img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .card-button-form {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  /* POPUP FORM MITRA */
   .popup-content {
-    padding: 2rem;
+    width: 95%;
+    padding: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* ✅ ubah jadi satu kolom */
+    gap: 1rem;
   }
 
   .form-group.full {
-    grid-column: 1;
+    grid-column: 1; /* ✅ pastikan tetap full */
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+
+/* RESPONSIVE FORM POPUP */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 1.5rem;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* ✅ ubah jadi 1 kolom */
+    gap: 1rem;
+  }
+
+  .form-group.full {
+    grid-column: 1; /* ✅ pastikan semua form full */
+  }
+
+  .popup-content h2,
+  .popup-desc {
+    text-align: center;
+  }
+
+  .submit-btn {
+    width: 100%; /* ✅ tombol full biar rapih di mobile */
   }
 }

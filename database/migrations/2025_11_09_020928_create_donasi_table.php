@@ -12,14 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('donasi', function (Blueprint $table) {
-            $table->id('id_donasi');
-            $table->string('nama_lengkap');
-            $table->string('no_handphone');
-            $table->text('alamat');
-            $table->string('email');
-            $table->enum('jenis_donasi', ['kain_perca', 'pakaian_layak', 'bahan_tekstil', 'campuran']);
-            $table->enum('cara_penyaluran', ['diantar', 'dijemput']);
-            $table->text('keterangan');
+            $table->id();
+            
             $table->timestamps();
         });
     }

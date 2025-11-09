@@ -109,7 +109,7 @@ body {
 }
 
 .about-text p {
-    color: #4B4B4B;
+    color: #45270D;
     margin-bottom: 1rem;
     line-height: 1.7;
 }
@@ -119,7 +119,7 @@ body {
     background-color: #45270D;
     color: #FFFADD;
     padding: 0.8rem 1.6rem;
-    border-radius: 8px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s;
@@ -259,7 +259,7 @@ body {
 }
 
 .review-subtitle {
-    color: #6b705c;
+    color: #4a5d23;
     margin-bottom: 2rem;
     font-size: 1rem;
 }
