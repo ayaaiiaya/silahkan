@@ -39,12 +39,12 @@
 
 .nav-links a:hover {
     color: #45270D;
-    background-color: #f4efc8;
+    background-color: #616B37;
 }
 
 /* ===== SCROLL EFFECT ===== */
 .navbar.scrolled {
-    background-color: #fff;
+    background-color: #f4efc8;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -55,7 +55,7 @@
 
 .navbar.scrolled .nav-links a:hover {
     color: #FFFADD;
-    background-color: transparent;
+    background-color: #616B37;
 }
 
 .navbar.scrolled .logo img {

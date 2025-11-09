@@ -390,6 +390,8 @@ body {
   text-align: center; /* Biar teks di tengah */   
 }
 
+.program-header h2 .highlight {
+    color: #28a745; /* Warna hijau cerah untuk highlight */
 .edukasi-container h2{
   color: #4a5d23;
   font-size: 2.2rem;
@@ -427,6 +429,16 @@ body {
   border-radius: 10px;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
+
+/* --- Area Konten Krem (scoping) --- */
+.program-card .card-content {
+    /* Background krem untuk semua konten (ilustrasi, judul, deskripsi, tombol) */
+    background-color: #fcf8e3; 
+    color: #333; 
+    padding: 0; 
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
 
 /* Teks */
 .education-text {
@@ -486,12 +498,66 @@ body {
     line-height: 1.6;
 }
 
+/* --- Area Ilustrasi (scoping) --- */
+.program-card .card-image {
+    background-color: transparent; 
+    padding: 20px;
+    height: 180px; 
+
 .kontribusi-grid {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
+
+.program-card .card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.program-card .card-content h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #4b6a37; /* Warna hijau tua untuk judul */
+    padding: 0 15px;
+}
+
+.program-card .card-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 70px; /* Memberi ruang di bawah untuk tombol absolut */
+    color: #555;
+    text-align: center;
+    padding: 0 25px;
+}
+
+/* --- Tombol (scoping tidak perlu karena namanya spesifik) --- */
+.btn-gabung {
+    /* Posisi absolut relatif terhadap .card-content */
+    position: absolute;
+    bottom: 15px; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 80%;
+    padding: 10px 0;
+    
+    /* Warna tombol cokelat gelap */
+    background-color: #8b6b4e; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 3;
 
 .kontribusi-card {
     background-color: #fff;
@@ -526,6 +592,7 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
+
 }
 
 .kontribusi-card p {
@@ -591,6 +658,286 @@ body {
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+    .program-header h2 {
+        font-size: 2em;
+    }
+
+    .program-cards {
+        gap: 20px;
+    }
+    
+    .program-card {
+        max-width: 100%; 
+    }
+    
+    .program-card .card-content p {
+        /* Sedikit kurangi ruang tombol di mobile */
+        margin-bottom: 60px; 
+    }
+}
+
+/* ===== EDUKASI SECTION ===== */
+.silahkan-edukasi {
+    padding: 80px 0;
+    background-color: #fcf8e3; /* Latar belakang krem/kuning pucat */
+}
+
+.edukasi-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* --- Header Section --- */
+.edukasi-header {
+    margin-bottom: 60px;
+}
+
+.edukasi-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4b6a37; /* Hijau tua */
+    font-weight: 700;
+}
+
+.edukasi-header h2 .highlight {
+    color: #4b6a37; /* Judul semua hijau tua */
+}
+
+.edukasi-header p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* --- Item Edukasi (Layout Zigzag) --- */
+.edukasi-list {
+    display: flex;
+    flex-direction: column;
+    /* Jarak vertikal yang besar antar item */
+    gap: 80px; 
+}
+
+.edukasi-item {
+    display: flex;
+    align-items: flex-start; 
+    gap: 40px;
+    position: relative; 
+}
+
+.item-image {
+    /* Gambar mengambil sebagian besar ruang */
+    flex: 0 0 50%; 
+    max-width: 50%;
+}
+
+.item-image img {
+    width: 70%;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.item-content {
+    /* Konten mengambil ruang yang tersisa */
+    flex: 1 1 50%; 
+    max-width: 50%;
+    
+    /* Gunakan padding-top untuk menyeimbangkan posisi teks */
+    padding-top: 15px; 
+}
+
+/* --- Positioning Judul dan Deskripsi --- */
+
+.item-title {
+    font-size: 1.8em;
+    margin: 0;
+    margin-bottom: 10px; /* Jarak antara judul dan deskripsi */
+    color: #4b6a37;
+    font-weight: 600;
+    /* Reset padding/margin */
+    padding: 0; 
+}
+
+.item-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+
+/* 1. Item Kiri (Gambar Kiri, Judul & Teks Kanan) */
+.edukasi-item.item-left-image .item-content {
+    text-align: left;
+    /* Posisikan teks deskripsi dan judul sedikit lebih ke bawah agar seimbang dengan gambar */
+    padding-top: 20px; 
+}
+
+/* 2. Item Kanan (Gambar Kanan, Judul & Teks Kiri) */
+.edukasi-item.item-right-image {
+    flex-direction: row-reverse;
+}
+
+.edukasi-item.item-right-image .item-content {
+    text-align: right;
+    /* Posisikan teks deskripsi dan judul sedikit lebih ke bawah agar seimbang dengan gambar */
+    padding-top: 20px; 
+}
+
+/* --- Responsivitas (Penataan Vertikal) --- */
+@media (max-width: 850px) {
+    .edukasi-list {
+        gap: 40px;
+    }
+    
+    .edukasi-item {
+        /* Susun item secara vertikal di layar kecil */
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .item-image,
+    .item-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+    
+    .item-content {
+        padding-top: 10px;
+        text-align: center !important;
+    }
+    
+    .item-title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .item-description {
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .edukasi-item.item-right-image {
+        flex-direction: column;
+    }
+}
+
+/* ===== KONTRIBUSI SECTION ===== */
+.silahkan-kontribusi {
+    padding: 80px 0;
+    /* Warna latar belakang krem/kuning pucat yang konsisten */
+    background-color: #fcf8e3; 
+}
+
+.kontribusi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* --- Header Section --- */
+.kontribusi-header {
+    margin-bottom: 50px;
+}
+
+.kontribusi-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4b6a37; /* Hijau tua */
+    font-weight: 700;
+}
+
+.kontribusi-header h2 .highlight {
+    color: #4b6a37; /* Judul utama semua hijau tua */
+}
+
+.kontribusi-header p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* --- Card Container --- */
+.kontribusi-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* --- Card Utama --- */
+.kontribusi-card {
+    flex: 1 1 300px; /* Fleksibel, lebar minimum 300px */
+    max-width: 350px;
+    background-color: #ffffff; /* Latar belakang card putih */
+    border-radius: 12px;
+    overflow: hidden;
+    /* Bayangan lembut untuk mengangkat card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Area Ilustrasi --- */
+.card-image {
+    background-color: transparent; 
+    padding: 30px 20px 0 20px; /* Padding di atas gambar lebih besar */
+    height: 200px; /* Atur tinggi agar seragam */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Area Judul Konten --- */
+.card-content {
+    background-color: transparent;
+    color: #333;
+    padding: 25px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.4em;
+    /* Warna teks cokelat gelap sesuai gambar */
+    color: #4e4e4e; 
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* --- Media Queries (Responsivitas) --- */
+@media (max-width: 1024px) {
+    .kontribusi-card {
+        max-width: 45%; /* Dua kartu per baris */
+    }
+}
+
+@media (max-width: 768px) {
+    .kontribusi-header h2 {
+        font-size: 2em;
+    }
+
+    .kontribusi-cards {
+        gap: 20px;
+    }
+    
+    .kontribusi-card {
+        max-width: 100%; /* Satu kartu per baris */
+    }
+}
   /* Navbar Burger */
   .nav-container {
     position: relative;
@@ -704,3 +1051,4 @@ body {
     padding: 1.5rem;
   }
 }
+

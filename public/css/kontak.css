@@ -1,0 +1,298 @@
+/*
+======================================================
+      KONTAK PAGE STYLING (kontak.css)
+======================================================
+*/
+
+/* ===== GLOBAL & BODY STYLES (Sesuai Permintaan) ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Background color ini akan berlaku di luar area navbar, footer, dan kontak */
+    font-family: "Poppins", sans-serif;
+    background-color: #FFFADD; 
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* -------------------- FORM CONTAINER (KIRI) -------------------- */
+.contact {
+    display: flex; /* Layout 2 kolom */
+    min-height: 90vh;
+    font-family: 'Poppins', sans-serif; 
+    
+    /* 1. Margin atas (menjauh dari elemen sebelumnya) */
+    margin-top: 20px; 
+    margin-left: 5%; 
+    margin-right: 5%;
+    padding-top: 0; 
+}
+
+/* -------------------- FORM CONTAINER (KIRI) -------------------- */
+.contact-form-container {
+    flex: 1.2; 
+    color: #FFFADD; 
+    padding: 40px 60px;
+    
+    /* Ganti path gambar sesuai yang Anda berikan */
+    background-image: url('/image/kontak.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Overlay gelap di atas gambar background */
+.contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); 
+    z-index: 1;
+}
+
+/* Konten di atas overlay */
+.form-title, .contact-form, .form-group label {
+    z-index: 2; 
+    position: relative;
+}
+
+.form-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px; 
+    font-size: 16px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 20px; 
+    border: none;
+    border-radius: 30px; 
+    background-color: #FFFADD; /* Warna input krem muda */
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    color: #333;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+    border-radius: 8px; 
+}
+
+.kirim-button {
+    background-color: #6B5B3E; 
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+    float: right; 
+    transition: background-color 0.3s;
+}
+
+.kirim-button:hover {
+    background-color: #5A4C39;
+}
+
+
+/* -------------------- INFO CONTAINER (KANAN) -------------------- */
+.contact-info-container {
+    flex: 1;
+    background-color: #FFFADD; /* Warna info krem muda */
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-title {
+    color: #6B5B3E; 
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.info-tagline {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.info-channel-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contact-channels {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: flex;
+}
+
+.contact-info-container .channel-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #6B5B3E; 
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px; 
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.contact-info-container .channel-link:hover {
+    background-color: #5A4C39;
+}
+
+.channel-link .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ganti background ikon agar sesuai dengan tombolnya */
+    background-color: #8C785C; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+/* Ikon menggunakan CSS content (unicode/emoji) */
+.website-icon::after {
+    content: '\1F517'; 
+}
+
+.phone-icon::after {
+    content: '\260E';
+}
+
+
+/* -------------------- RESPONSIVENESS -------------------- */
+@media (max-width: 992px) {
+    .contact {
+        flex-direction: column; 
+    }
+
+    .contact-form-container,
+    .contact-info-container {
+        flex: none;
+        width: 100%;
+        padding: 40px;
+    }
+}
+
+/* ======================================================
+      MAP SECTION STYLING (NEW)
+====================================================== */
+
+.map-section {
+    /* Menerapkan margin horizontal yang sama dengan .contact */
+    margin: 40px 5% 40px 5%; /* Top, Right, Bottom, Left */
+    padding: 40px;
+    text-align: center;
+    background-color: #FFFADD; /* Background krem agar kotak peta menonjol */
+    border-radius: 10px; /* Sudut sedikit melengkung */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan lembut */
+}
+
+.map-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #6B5B3E; /* Warna hijau gelap */
+    margin-bottom: 5px;
+}
+
+.map-address {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.map-container {
+    width: 100%;
+    /* Rasio aspek 16:9 untuk peta */
+    padding-bottom: 56.25%; 
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* -------------------- RESPONSIVENESS -------------------- */
+@media (max-width: 992px) {
+    .contact {
+        flex-direction: column; 
+        /* Hapus margin horizontal agar memenuhi layar di mobile */
+        margin-left: 0; 
+        margin-right: 0;
+    }
+
+    .contact-form-container,
+    .contact-info-container {
+        flex: none;
+        width: 100%;
+        padding: 40px;
+    }
+    
+    .map-section {
+        /* Hapus margin horizontal agar memenuhi layar di mobile */
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+    
+    .map-title {
+        font-size: 28px;
+    }
+
+    .map-address {
+        font-size: 16px;
+    }
+}
