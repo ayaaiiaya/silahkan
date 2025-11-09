@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
+=======
+use App\Http\Controllers\MitraController;
 
 // Route Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -15,3 +17,8 @@ Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->
 
 // Route POST untuk memproses pengiriman form
 Route::post('/kontak', [App\Http\Controllers\KontakController::class, 'submit'])->name('kontak.submit');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+
+
+Route::get('/kemitraan', [MitraController::class, 'index'])->name('kemitraan.index');
+Route::post('/kemitraan/store', [MitraController::class, 'store'])->name('kemitraan.store');

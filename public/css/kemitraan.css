@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #FFFADD;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== SECTION JOIN ===== */
+.join-section {
+  background-color: #FFFADD;
+  padding: 5rem 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.join-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* agar responsif */
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ===== TEKS ===== */
+.text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-content h1 {
+  color: #4a5d23;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.text-content .subtitle {
+  color: #4a5d23;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ===== BUTTON ===== */
+.card-button-form {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-button-form button {
+  background-color: #45270D;
+  color: #FFFADD;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* .card-button-form button:hover {
+  background-color: #4A6330;
+  transform: scale(1.05);
+} */
+
+/* ===== BUTTON ===== */
+.card-button-form {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem; /* jarak antar tombol */
+  flex-wrap: wrap; /* biar kalau layar kecil, tombol turun ke bawah */
+}
+
+/* Tombol umum */
+.card-button-form button {
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Tombol 1 (utama) */
+.btn-gabung {
+  background-color: #45270D;
+  color: #FFFADD;
+}
+
+/* Tombol 2 (sekunder) */
+.btn-mitra {
+  background-color: #263717;
+  color: #263717;
+  border: 2px solid #263717;
+}
+
+/* ===== GAMBAR ===== */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 420px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.program-section {
+  background-color: #FFFADD;
+  padding: 4rem 10%;
+}
+
+.program-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* biar responsif */
+}
+
+.program-image img {
+  width: 420px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.program-text {
+  flex: 1;
+  color: #4a5d23;
+}
+
+.program-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.program-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Section dasar */
+.info-section {
+  background-color: #FFFADD;
+  padding: 4rem 10%;
+}
+
+/* Container fleksibel */
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Versi dengan gambar di kanan */
+.info-container.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Styling gambar */
+.info-image img {
+  width: 420px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Teks di kiri */
+.info-text {
+  flex: 1;
+  color: #4a5d23;
+}
+
+.info-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.info-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* ===== POPUP FORM ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 30px 15px;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-content {
+  background: #FFFADD;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-content {
+  transform: translateY(0);
+}
+
+.popup-content h2 {
+  color: #4a5d23;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.popup-desc {
+  color: #4a5d23;
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #45270D;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+/* Checkbox persetujuan */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #45270D;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+}
+
+.submit-btn {
+  display: block;
+  margin: 2rem auto 0;
+  background-color: #45270D;
+  color: #FFFADD;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #5a3512;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 1.8rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: 1;
+  }
+}
