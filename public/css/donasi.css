@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -122,85 +121,75 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.program-section {
-  background-color: #FFFADD;
-  padding: 4rem 10%;
+.kontribusi {
+    background-color: #FFFADD;
+    text-align: center;
+    padding: 5rem 10%;
 }
 
-.program-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap; /* biar responsif */
+.kontribusi-container h2 {
+    color: #4a5d23;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
 }
 
-.program-image img {
-  width: 420px;
-  border-radius: 5px;
-  object-fit: cover;
+.kontribusi-container p {
+    color: #4a5d23;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
 }
 
-.program-text {
-  flex: 1;
-  color: #4a5d23;
+.kontribusi-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-.program-text h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.kontribusi-card {
+    background-color: #4a5d23;
+    border-radius: 15px;
+    padding: 2rem;
+    flex: 1 1 300px;
+    max-width: 340px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.program-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 500px;
+.kontribusi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Section dasar */
-.info-section {
-  background-color: #FFFADD;
-  padding: 4rem 10%;
+.kontribusi-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
 }
 
-/* Container fleksibel */
-.info-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+.kontribusi-card:hover img {
+    transform: scale(1.05);
 }
 
-/* Versi dengan gambar di kanan */
-.info-container.reverse {
-  flex-direction: row-reverse;
+.kontribusi-card h3 {
+    color: #FFFADD;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
 }
 
-/* Styling gambar */
-.info-image img {
-  width: 420px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-/* Teks di kiri */
-.info-text {
-  flex: 1;
-  color: #4a5d23;
-}
-
-.info-text h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.info-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 500px;
+.kontribusi-card p {
+    background-color: #FFFADD;
+    color: #45270D;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* ===== POPUP FORM ===== */
@@ -294,21 +283,6 @@ body {
   background-color: #fff;
 }
 
-/* Checkbox persetujuan */
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: #45270D;
-  cursor: pointer;
-}
-
-.checkbox-label input {
-  width: 18px;
-  height: 18px;
-}
-
 .submit-btn {
   display: block;
   margin: 2rem auto 0;
@@ -340,84 +314,135 @@ body {
   cursor: pointer;
 }
 
-/* ===== RESPONSIVE MODE (Mobile) ===== */
-@media (max-width: 768px) {
+/* ====== RESPONSIVE DESIGN ====== */
 
-  /* Layout utama */
-  .join-container,
-  .program-container,
-  .info-container {
-    flex-direction: column; /* ✅ urut ke bawah */
-    text-align: center;
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .join-section {
+    padding: 4rem 6%;
   }
 
-  .text-content,
-  .program-text,
-  .info-text {
-    text-align: center;
-  }
-
-  .image img,
-  .program-image img,
-  .info-image img {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .card-button-form {
-    justify-content: center;
+  .join-container {
     flex-direction: column;
-    gap: 0.8rem;
+    text-align: center;
   }
 
-  /* POPUP FORM MITRA */
-  .popup-content {
-    width: 95%;
-    padding: 1.5rem;
-    max-height: 90vh;
-    overflow-y: auto;
+  .text-content {
+    order: 2;
   }
 
-  .form-grid {
-    grid-template-columns: 1fr; /* ✅ ubah jadi satu kolom */
-    gap: 1rem;
+  .image {
+    order: 1;
+    margin-bottom: 2rem;
   }
 
-  .form-group.full {
-    grid-column: 1; /* ✅ pastikan tetap full */
+  .image img {
+    width: 320px;
   }
 
-  .submit-btn {
-    width: 100%;
+  .text-content h1 {
+    font-size: 2rem;
+  }
+
+  .kontribusi-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .kontribusi-card h3 {
+    font-size: 1.5rem;
   }
 }
 
-
-/* RESPONSIVE FORM POPUP */
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+  .join-section {
+    padding: 3rem 5%;
+  }
+
+  .join-container {
+    gap: 2rem;
+  }
+
+  .text-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-content .subtitle {
+    font-size: 1rem;
+  }
+
+  .card-button-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-button-form button {
+    width: 80%;
+  }
+
+  .image img {
+    width: 280px;
+  }
+
+  .kontribusi {
+    padding: 3rem 5%;
+  }
+
+  .kontribusi-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kontribusi-card {
+    max-width: 100%;
+  }
+
   .popup-content {
-    padding: 1.5rem;
     width: 95%;
-    max-height: 90vh;
-    overflow-y: auto;
+    padding: 2rem 1.5rem;
   }
 
   .form-grid {
-    grid-template-columns: 1fr; /* ✅ ubah jadi 1 kolom */
-    gap: 1rem;
+    grid-template-columns: 1fr;
   }
 
   .form-group.full {
-    grid-column: 1; /* ✅ pastikan semua form full */
-  }
-
-  .popup-content h2,
-  .popup-desc {
-    text-align: center;
+    grid-column: span 1;
   }
 
   .submit-btn {
-    width: 100%; /* ✅ tombol full biar rapih di mobile */
+    width: 100%;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 15px;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .text-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-content .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .kontribusi-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .kontribusi-card p {
+    font-size: 0.85rem;
+  }
+
+  .popup-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .popup-desc {
+    font-size: 0.9rem;
   }
 }

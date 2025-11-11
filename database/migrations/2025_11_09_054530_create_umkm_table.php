@@ -12,15 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('umkm', function (Blueprint $table) {
-            $table->id('id_umkm');
+            $table->id();
             $table->string('nama_lengkap');
             $table->string('no_handphone');
-            $table->text('alamat');
-            $table->string('email');
-            $table->enum('jenis_kolaborasi', ['edukasi_sosialisasi', 'produksi_daur ulang', 
-                        'kampanye_lingkungan', 'pendampingan_umkm', 'lainnya']);
-            $table->text('deskripsi');
+            $table->string('email')->unique();
+            $table->text('alamat')->nullable();
+            $table->string('nama_umkm');
+            $table->enum('skala_usaha', ['mikro', 'kecil', 'menengah']);
+            $table->enum('jenis_kolaborasi', ['edukasi_sosialiasasi', 'produksi_recycle', 'event',
+            'pendampingan_umkm', 'lainnya']);
+            $table->text('deskripsi')->nullable();
             $table->string('lokasi');
+            $table->boolean('setuju_syarat')->default(false);
             $table->timestamps();
         });
     }

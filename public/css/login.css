@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #FFFADD;
+  color: #FFFADD;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  align-items: center; /* vertikal tengah */
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  gap: 100px; /* jarak antar gambar dan form */
+}
+
+.image-section img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.form-section {
+  flex: 1;
+  max-width: 400px;
+  background: #87561E;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-section p {
+    color: #FFFADD;
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;           /* label jadi satu baris penuh (di atas input) */
+  margin-bottom: 6px;       /* jarak kecil antara label dan input */
+  font-weight: 600;
+  color: #FFFADD;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 3px rgba(0, 102, 204, 0.3);
+}
+
+.btn-login {
+  display: block;
+  width: 100%;
+  background-color: #616B37;
+  color: #FFFADD;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}

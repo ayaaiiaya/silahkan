@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('donasi', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('nama_lengkap');
+            $table->string('no_handphone');
+            $table->string('email')->unique();
+            $table->text('alamat')->nullable();
+            $table->enum('jenis_donasi', ['kain_perca', 'pakaian_layak', 'bahan_tekstil', 'campuran']);
+            $table->enum('cara_donasi', ['diantar', 'dijemput']);
+            $table->text('keterangan')->nullable();
+            $table->enum('status', ['menunggu','disetujui','ditolak'])->default('menunggu');
             $table->timestamps();
         });
     }

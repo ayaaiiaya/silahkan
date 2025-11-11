@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aktivitas;
 use Illuminate\Http\Request;
 use App\Models\Kemitraan;
+use Carbon\Carbon;
 
 class MitraController extends Controller
 {
@@ -38,7 +40,19 @@ class MitraController extends Controller
             'setuju_syarat' => true
         ]);
 
-        // Redirect dengan flash message
-        return redirect()->back()->with('success', 'Pendaftaran berhasil!');
+        $jenisLabels = [
+            'penjemputan_individu' => 'Individu',
+            'penjemputan_organisasi' => 'Organisasi',
+            'penjemputan_bisnis_tekstil' => 'Bisnis Tekstil',
+        ];
+        $jenisLabel = $jenisLabels[$validated['jenis_kemitraan']] ?? $validated['jenis_kemitraan'];
+
+
+         Aktivitas::create([
+            'deskripsi' => $validated['nama_lengkap'] . ' mendaftarkan kemitraan " ' . '' . $jenisLabel. '"',
+            'kategori' => 'Kemitraan',
+            'tanggal' => Carbon::now(),
+        ]);
+        return redirect()->back()->with('success', 'Pendaftaran Berhasil !!');
     }
 }

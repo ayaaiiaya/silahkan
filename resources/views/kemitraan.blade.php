@@ -164,5 +164,11 @@
             submitBtn.disabled = !agreeCheckbox.checked;
         });
     </script>
+
+    <script>
+        document.querySelector('.btn-mitra').addEventListener('click', function() {
+            window.open('https://wa.me/6287884462644?text=Halo%2C%20saya%20tertarik%20dengan%20program%20UMKM%20Anda!', '_blank');
+        });
+    </script>
 </body>
 </html>

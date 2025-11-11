@@ -18,9 +18,9 @@
             <li class="dropdown">
                 <a href="#">Layanan ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Donasi Kain</a></li>
+                    <li><a href="{{ route ('donasi.index') }}">Donasi Kain</a></li>
                     <li><a href="{{ route ('kemitraan.index') }}">Kemitraan</a></li>
-                    <li><a href="#">Edukasi Daur Ulang</a></li>
+                    <li><a href="{{ route('umkm.index') }}">Edukasi Daur Ulang</a></li>
                 </ul>
             </li>
             <li><a href="#">Berita</a></li>
@@ -28,8 +28,8 @@
             <a href="{{ route('kontak.index') }}" 
                    class="@if(request()->routeIs('kontak.index')) active @endif">
                    Kontak Kami
-                </a></li>
-            <li><a href="#">Login</a></li>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
