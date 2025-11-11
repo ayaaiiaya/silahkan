@@ -20,7 +20,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{ route ('donasi.index') }}">Donasi Kain</a></li>
                     <li><a href="{{ route ('kemitraan.index') }}">Kemitraan</a></li>
-                    <li><a href="{{ route('umkm.index') }}">Edukasi Daur Ulang</a></li>
+                    <li><a href="{{ route('umkm.index') }}">UMKM</a></li>
                 </ul>
             </li>
             <li><a href="#">Berita</a></li>
