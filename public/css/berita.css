@@ -1,0 +1,629 @@
+/* Berita page styles - match site fonts, colors and layout */
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #FFFADD;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto 4rem;
+}
+
+/* ===== COLLAGE SECTION ===== */
+.collage {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: 360px 220px;
+    grid-template-rows: 200px 140px 110px;
+    gap: 14px;
+    align-items: start;
+}
+
+.collage-grid .img1 { 
+    grid-column: 1 / 2; 
+    grid-row: 1 / 3; 
+    border-radius: 12px; 
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%; 
+    display: block;
+    animation: slideInLeft 0.8s ease-out;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.collage-grid .img1:hover {
+    transform: translateY(-4px);
+}
+
+.collage-grid .img2 { 
+    grid-column: 2 / 3; 
+    grid-row: 1 / 2; 
+    border-radius: 10px; 
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%; 
+    display: block;
+    animation: slideInRight 0.8s ease-out 0.1s both;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.collage-grid .img2:hover {
+    transform: translateY(-4px);
+}
+
+.collage-grid .img3 { 
+    grid-column: 2 / 3; 
+    grid-row: 2 / 3; 
+    border-radius: 10px; 
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%; 
+    display: block;
+    animation: slideInRight 0.8s ease-out 0.2s both;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.collage-grid .img3:hover {
+    transform: translateY(-4px);
+}
+
+.collage-grid .img4 { 
+    grid-column: 1 / 2; 
+    grid-row: 3 / 4; 
+    border-radius: 8px; 
+    object-fit: cover; 
+    width: 60%; 
+    height: 100%; 
+    display: block;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.collage-grid .img4:hover {
+    transform: translateY(-4px);
+}
+
+.collage-text {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.collage-text h2 {
+    font-size: 3rem;
+    color: #616B37;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.collage-text p {
+    color: #616B37;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.primary-btn {
+    background: #87561E;
+    color: #FFFADD;
+    box-shadow: 0 15px 25px rgba(135, 86, 30, 0.25);
+}
+
+.primary-btn.small {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 35px rgba(135, 86, 30, 0.25);
+}
+
+.ghost-btn {
+    background: transparent;
+    border: 1px solid rgba(135, 86, 30, 0.3);
+    color: #87561E;
+}
+
+.ghost-btn:hover {
+    border-color: #87561E;
+}
+
+/* ===== DAFTAR BERITA ===== */
+.list-berita {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.list-header h2 {
+    color: #616B37;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.empty-state {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px dashed rgba(97, 107, 55, 0.3);
+    text-align: center;
+    color: #616B37;
+}
+
+.berita-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+.berita-card {
+    display: flex;
+    gap: 1rem;
+    background: #A26332;
+    border-radius: 14px;
+    padding: 1.2rem;
+    align-items: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    color: #fff;
+    min-height: 140px;
+    animation: fadeInUp 0.6s ease-out both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.berita-card:nth-child(1) { animation-delay: 0s; }
+.berita-card:nth-child(2) { animation-delay: 0.1s; }
+.berita-card:nth-child(3) { animation-delay: 0.2s; }
+.berita-card:nth-child(4) { animation-delay: 0.3s; }
+.berita-card:nth-child(n+5) { animation-delay: 0.4s; }
+
+.berita-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.berita-image {
+    flex: 0 0 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.berita-image img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.08);
+    display: block;
+}
+
+.berita-card .berita-body h3 {
+    margin: 0 0 0.6rem 0;
+    color: #FFFADD;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.excerpt {
+    color: #FFFADD;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    background: #FFFADD;
+    color: #8B4F24;
+    padding: 0.45rem 0.85rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ===== DETAIL PAGE ===== */
+.berita-detail-hero {
+    background: linear-gradient(135deg, #616B37 0%, #87561E 100%);
+    padding: 4rem 8%;
+}
+
+/* Warna khusus untuk Berita 1 - Donasi Kain (Hijau ke Coklat) */
+.berita-hero-1 {
+    background: linear-gradient(135deg, #616B37 0%, #7A8A4A 50%, #87561E 100%);
+}
+
+/* Warna khusus untuk Berita 2 - Edukasi Limbah (Coklat ke Oranye) */
+.berita-hero-2 {
+    background: linear-gradient(135deg, #87561E 0%, #B8860B 50%, #CD853F 100%);
+}
+
+.berita-detail-hero .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFADD;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(255,250,221,0.1);
+}
+
+.back-link:hover {
+    background: rgba(255,250,221,0.2);
+    transform: translateX(-5px);
+}
+
+.berita-detail-hero h1 {
+    color: #FFFADD;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.berita-detail-meta {
+    color: rgba(255,250,221,0.8);
+    font-size: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.berita-detail-content {
+    padding: 4rem 8%;
+    background-color: #fff;
+    color: #333;
+}
+
+.berita-detail-content .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.berita-featured-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    display: block;
+}
+
+.berita-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.berita-body p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.berita-body h2 {
+    color: #616B37;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.berita-body h3 {
+    color: #616B37;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.berita-body h4 {
+    color: #616B37;
+    margin-top: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.berita-body ul,
+.berita-body ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.berita-body li {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+.berita-back-action {
+    margin-top: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+.btn-back-list {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #616B37 0%, #7A8A4A 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(97, 107, 55, 0.2);
+}
+
+.btn-back-list:hover {
+    background: linear-gradient(135deg, #7A8A4A 0%, #616B37 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(97, 107, 55, 0.3);
+}
+
+/* ===== ADMIN STYLING ===== */
+.admin-container { 
+    padding: 2rem;
+}
+
+.admin-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.admin-table th, 
+.admin-table td { 
+    padding: 12px; 
+    border-bottom: 1px solid #eee; 
+    text-align: left;
+}
+
+.admin-table th { 
+    background: #616B37;
+    color: #fff;
+    font-weight: 600;
+}
+
+.admin-table tr:hover { 
+    background: #f9f9f9;
+}
+
+.btn { 
+    display: inline-block; 
+    padding: 8px 12px; 
+    background: #616B37; 
+    color: #fff; 
+    border-radius: 8px; 
+    text-decoration: none;
+    margin-right: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #45270D;
+}
+
+.btn.small { 
+    padding: 6px 8px; 
+    font-size: 0.9rem; 
+}
+
+.btn.danger { 
+    background: #c0392b;
+}
+
+.btn.danger:hover {
+    background: #a93226;
+}
+
+.alert { 
+    background: #e7f5e6; 
+    padding: 12px; 
+    border-radius: 6px; 
+    margin: 1rem 0;
+    color: #27ae60;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .container {
+        width: 92%;
+    }
+
+    .collage {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .collage-text {
+        width: 100%;
+    }
+
+    .berita-grid {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .berita-card {
+        min-width: 320px;
+        flex: 0 0 auto;
+        align-items: flex-start;
+    }
+
+    .collage-grid { 
+        width: 100%; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 180px 140px; 
+    }
+
+    .collage-grid .img1 { 
+        grid-column: 1 / 2; 
+        grid-row: 1 / 2; 
+    }
+
+    .collage-grid .img2 { 
+        grid-column: 2 / 3; 
+        grid-row: 1 / 2; 
+    }
+
+    .collage-grid .img3 { 
+        grid-column: 2 / 3; 
+        grid-row: 2 / 3; 
+    }
+
+    .collage-grid .img4 { 
+        grid-column: 1 / 2; 
+        grid-row: 2 / 3; 
+        width: 100%; 
+    }
+
+    .berita-detail-hero h1 {
+        font-size: 2rem;
+    }
+
+    .berita-detail-content {
+        padding: 2rem 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .collage-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .collage-grid .img1,
+    .collage-grid .img2,
+    .collage-grid .img3,
+    .collage-grid .img4 { 
+        grid-column: 1 / 2; 
+        width: 100%;
+        min-height: 120px;
+    }
+
+    .berita-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .berita-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .berita-image img {
+        width: 100%;
+        height: 160px;
+    }
+}
+

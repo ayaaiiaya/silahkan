@@ -7,6 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\AdminBeritaController;
 
 // Route Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -55,3 +57,15 @@ Route::get('/admin/data-kemitraan', [AdminController::class, 'dataKemitraan'])->
 Route::get('/admin/data-kemitraan/{id}/edit', [AdminController::class, 'editKemitraan'])->name('admin.kemitraan.edit');
 Route::patch('/admin/data-kemitraan/{id}', [AdminController::class, 'updateKemitraan'])->name('admin.kemitraan.update');
 Route::delete('/admin/data-kemitraan/{id}/delete', [AdminController::class, 'deleteKemitraan'])->name('admin.kemitraan.delete');
+
+// Berita public routes
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
+
+// Admin Berita routes
+Route::get('/admin/berita', [AdminBeritaController::class, 'index'])->name('admin.berita.index');
+Route::get('/admin/berita/create', [AdminBeritaController::class, 'create'])->name('admin.berita.create');
+Route::post('/admin/berita', [AdminBeritaController::class, 'store'])->name('admin.berita.store');
+Route::get('/admin/berita/{id}/edit', [AdminBeritaController::class, 'edit'])->name('admin.berita.edit');
+Route::patch('/admin/berita/{id}', [AdminBeritaController::class, 'update'])->name('admin.berita.update');
+Route::delete('/admin/berita/{id}', [AdminBeritaController::class, 'destroy'])->name('admin.berita.destroy');

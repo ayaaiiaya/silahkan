@@ -40,6 +40,9 @@
             <li class="{{ Request::is('admin/kemitraan') ? 'active' : '' }}">
                 <a href="{{ route('admin.kemitraan.index') }}"><i class="bi bi-people"></i> Data Kemitraan</a>
             </li>
+            <li class="{{ Request::is('admin/berita*') ? 'active' : '' }}">
+                <a href="{{ route('admin.berita.index') }}"><i class="bi bi-newspaper"></i> Berita</a>
+            </li>
         </ul>
     </nav>
 

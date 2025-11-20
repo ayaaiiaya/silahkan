@@ -23,7 +23,7 @@
                     <li><a href="{{ route('umkm.index') }}">UMKM</a></li>
                 </ul>
             </li>
-            <li><a href="#">Berita</a></li>
+            <li><a href="{{ route('berita.index') }}" class="@if(request()->routeIs('berita.*')) active @endif">Berita</a></li>
             <li>
             <a href="{{ route('kontak.index') }}" 
                    class="@if(request()->routeIs('kontak.index')) active @endif">
