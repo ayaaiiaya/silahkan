@@ -69,3 +69,12 @@ Route::post('/admin/berita', [AdminBeritaController::class, 'store'])->name('adm
 Route::get('/admin/berita/{id}/edit', [AdminBeritaController::class, 'edit'])->name('admin.berita.edit');
 Route::patch('/admin/berita/{id}', [AdminBeritaController::class, 'update'])->name('admin.berita.update');
 Route::delete('/admin/berita/{id}', [AdminBeritaController::class, 'destroy'])->name('admin.berita.destroy');
+
+// Home edit routes
+Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
+    // ... routes lainnya ...
+    
+    // Home Edit
+    Route::get('/home/edit', [HomeController::class, 'edit'])->name('admin.home.edit');
+    Route::put('/home/update', [HomeController::class, 'update'])->name('admin.home.update');
+});

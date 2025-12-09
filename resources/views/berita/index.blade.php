@@ -11,64 +11,125 @@
 <body>
     @include('components.navbar')
 
-    @php
-        $collageImages = ['kolase1.jpg','kolase2.jpg','kolase3.jpg','kolase4.jpg'];
-    @endphp
-
     <main class="container">
-        <section class="collage">
-            <div class="collage-grid">
-                <img class="img1" src="{{ asset('image/'.$collageImages[0]) }}" alt="kolase 1">
-                <img class="img2" src="{{ asset('image/'.$collageImages[1]) }}" alt="kolase 2">
-                <img class="img3" src="{{ asset('image/'.$collageImages[2]) }}" alt="kolase 3">
-                <img class="img4" src="{{ asset('image/'.$collageImages[3]) }}" alt="kolase 4">
-            </div>
-
-            <div class="collage-text">
-                <h2>Kabar Terbaru SILAHKAN</h2>
-                <p>Ikuti berbagai kegiatan, inovasi, dan cerita inspiratif seputar pengelolaan limbah kain.</p>
-
-                @if(session()->has('admin_id'))
-                    <div class="admin-actions">
-                        <a href="{{ route('admin.berita.create') }}" class="primary-btn">Tambah berita</a>
-                        <a href="{{ route('admin.berita.index') }}" class="ghost-btn">Kelola berita</a>
+        @if(!$beritas->isEmpty())
+            @php
+                $highlightBerita = $beritas->first();
+                $highlightImg = $highlightBerita->image 
+                    ? $highlightBerita->image 
+                    : (file_exists(public_path('image/berita1.jpg')) ? 'image/berita1.jpg' : 'image/image.png');
+            @endphp
+            
+            <section class="highlight-berita">
+                <div class="highlight-content">
+                    <div class="highlight-text">
+                        <span class="highlight-badge">Berita Utama</span>
+                        <h1>{{ $highlightBerita->title }}</h1>
+                        <p class="highlight-excerpt">
+                            {{ $highlightBerita->excerpt ?? \Illuminate\Support\Str::limit(strip_tags($highlightBerita->content), 200) }}
+                        </p>
+                        <div class="highlight-meta">
+                            <span class="date">
+                                📅 {{ $highlightBerita->created_at->format('d F Y') }}
+                            </span>
+                            @if($highlightBerita->category)
+                                <span class="category">
+                                    #{{ $highlightBerita->category }}
+                                </span>
+                            @endif
+                        </div>
+                        <a href="{{ route('berita.show', $highlightBerita->id) }}" class="primary-btn">
+                            Baca Selengkapnya
+                        </a>
+                        
+                        @if(session()->has('admin_id'))
+                            <div class="admin-actions">
+                                <a href="{{ route('admin.berita.edit', $highlightBerita->id) }}" class="edit-btn">
+                                    ✏️ Edit Berita Utama
+                                </a>
+                            </div>
+                        @endif
                     </div>
-                @endif
-            </div>
-        </section>
+                    
+                    <div class="highlight-image">
+                        <img src="{{ asset($highlightImg) }}" alt="{{ $highlightBerita->title }}">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </section>
+        @endif
 
         <section class="list-berita">
             <div class="list-header">
                 <h2>Daftar Berita</h2>
                 @if(session()->has('admin_id'))
-                    <a class="primary-btn small" href="{{ route('admin.berita.create') }}">Tambah berita</a>
+                    <div class="admin-header-actions">
+                        <a class="primary-btn small" href="{{ route('admin.berita.create') }}">
+                            ➕ Tambah berita
+                        </a>
+                        <a class="ghost-btn small" href="{{ route('admin.berita.index') }}">
+                            ⚙️ Kelola berita
+                        </a>
+                    </div>
                 @endif
             </div>
 
             @if($beritas->isEmpty())
                 <div class="empty-state">
-                    <p>Belum ada berita yang ditambahkan. Silakan kembali lagi nanti.</p>
+                    <div class="empty-icon">📰</div>
+                    <h3>Belum ada berita</h3>
+                    <p>Silakan tambahkan berita pertama Anda.</p>
+                    @if(session()->has('admin_id'))
+                        <a href="{{ route('admin.berita.create') }}" class="primary-btn">
+                            Tambah Berita Pertama
+                        </a>
+                    @endif
                 </div>
             @else
                 <div class="berita-grid">
-                    @foreach($beritas as $berita)
-                        <article class="berita-card">
-                            <div class="berita-image">
-                                @php
-                                    $imgPath = $berita->image 
-                                        ? $berita->image 
-                                        : (file_exists(public_path('image/berita1.jpg')) ? 'image/berita1.jpg' : 'image/image.png');
-                                @endphp
-                                <img src="{{ asset($imgPath) }}" alt="{{ $berita->title }}">
-                            </div>
-                            <div class="berita-body">
-                                <h3>{{ $berita->title }}</h3>
-                                <p class="excerpt">{{ $berita->excerpt ?? \Illuminate\Support\Str::limit(strip_tags($berita->content), 120) }}</p>
-                                <a href="{{ route('berita.show', $berita->id) }}" class="read-more">Baca Selengkapnya ➜</a>
-                            </div>
-                        </article>
+                    @foreach($beritas as $index => $berita)
+                        @if($index > 0) {{-- Skip first item karena sudah jadi highlight --}}
+                            <article class="berita-card {{ $index <= 3 ? 'featured' : '' }}">
+                                <div class="berita-image">
+                                    @php
+                                        $imgPath = $berita->image 
+                                            ? $berita->image 
+                                            : (file_exists(public_path('image/berita1.jpg')) ? 'image/berita1.jpg' : 'image/image.png');
+                                    @endphp
+                                    <img src="{{ asset($imgPath) }}" alt="{{ $berita->title }}">
+                                    @if($index <= 2)
+                                        <span class="featured-badge">Hot</span>
+                                    @endif
+                                </div>
+                                <div class="berita-body">
+                                    <div class="berita-meta">
+                                        <span class="date">
+                                            {{ $berita->created_at->format('d M Y') }}
+                                        </span>
+                                        @if($berita->category)
+                                            <span class="category">
+                                                {{ $berita->category }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                    <h3>{{ $berita->title }}</h3>
+                                    <p class="excerpt">
+                                        {{ $berita->excerpt ?? \Illuminate\Support\Str::limit(strip_tags($berita->content), 100) }}
+                                    </p>
+                                    <a href="{{ route('berita.show', $berita->id) }}" class="read-more">
+                                        Baca Selengkapnya ➜
+                                    </a>
+                                </div>
+                            </article>
+                        @endif
                     @endforeach
                 </div>
+                
+                @if($beritas->count() > 10)
+                    <div class="load-more">
+                        <button class="ghost-btn">Muat Lebih Banyak</button>
+                    </div>
+                @endif
             @endif
         </section>
     </main>

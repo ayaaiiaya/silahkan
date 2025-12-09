@@ -14,8 +14,99 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
     @yield('css')
+    <style>
+        /* Tambahan CSS untuk sidebar footer */
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .components {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .sidebar-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+        
+        .sidebar-footer .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-footer .user-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .sidebar-footer .user-details {
+            flex: 1;
+        }
+        
+        .sidebar-footer .user-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 2px;
+        }
+        
+        .sidebar-footer .user-role {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .logout-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 8px 15px;
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(220, 53, 69, 0.3);
+            border-color: rgba(220, 53, 69, 0.5);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .logout-btn i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar-footer {
+                display: none;
+            }
+            
+            .navbar .dropdown-menu {
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -44,6 +135,22 @@
                 <a href="{{ route('admin.berita.index') }}"><i class="bi bi-newspaper"></i> Berita</a>
             </li>
         </ul>
+        
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-icon">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="user-details">
+                    <div class="user-name">{{ auth('admin')->user()->name ?? 'Administrator' }}</div>
+                    <div class="user-role">Admin Panel</div>
+                </div>
+            </div>
+            <a href="{{ route('admin.logout') }}" class="logout-btn" onclick="return confirmLogout()">
+                <i class="bi bi-box-arrow-right"></i> Logout
+            </a>
+        </div>
     </nav>
 
     <!-- Page Content -->
@@ -64,11 +171,12 @@
                             <a class="btn btn-white btn-sm" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 medium">
+                                    <i class="bi bi-person-circle"></i> {{ auth('admin')->user()->name ?? 'Admin' }}
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                  aria-labelledby="userDropdown">
-                                <a class="dropdown-item btn btn-white btn-sm" href="{{ route('admin.logout') }}">
+                                <a class="dropdown-item btn btn-white btn-sm" href="{{ route('admin.logout') }}" onclick="return confirmLogout()">
                                     <i class="bi bi-box-arrow-right text-gray-400"></i> Logout
                                 </a>
                             </div>
@@ -94,7 +202,38 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
+    
+    // Dropdown user di navbar
+    $('#userDropdown').on('click', function(e) {
+        e.preventDefault();
+        $(this).next('.dropdown-menu').toggleClass('show');
+    });
+    
+    // Tutup dropdown saat klik di luar
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#userDropdown').length) {
+            $('.dropdown-menu').removeClass('show');
+        }
+    });
 });
+
+function confirmLogout() {
+    Swal.fire({
+        title: 'Konfirmasi Logout',
+        text: 'Apakah Anda yakin ingin keluar?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Logout',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "{{ route('admin.logout') }}";
+        }
+    });
+    return false;
+}
 </script>
 
 @yield('js')
